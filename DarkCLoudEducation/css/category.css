@@ -1,0 +1,91 @@
+        .category-page {
+            min-height: 100vh;
+            padding: 40px;
+        }
+
+        .category-header {
+            max-width: 1400px;
+            margin: 0 auto 40px;
+            text-align: center;
+        }
+
+        .category-header h1 {
+            font-size: 42px;
+            color: #4caf50;
+            margin-bottom: 15px;
+        }
+
+        .category-header p {
+            font-size: 16px;
+            color: #888;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin: 20px auto;
+            padding: 10px 25px;
+            background: rgba(76, 175, 80, 0.2);
+            border: 1px solid rgba(76, 175, 80, 0.5);
+            border-radius: 20px;
+            color: #4caf50;
+            text-decoration: none;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .back-btn:hover {
+            background: rgba(76, 175, 80, 0.3);
+        }
+
+.knowledge-card {
+    background: rgba(26, 31, 46, 0.9);
+    border: 1px solid rgba(76, 175, 80, 0.3);
+    border-radius: 15px;
+    padding: 30px;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+    animation-name: cardhide;
+    animation-duration: 50s;
+}
+
+.knowledge-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(76, 175, 80, 0.1) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.knowledge-card:hover::before {
+    opacity: 1;
+}
+
+.knowledge-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(76, 175, 80, 0.4);
+    border-color: #4caf50;
+}
+
+.card-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.card-title {
+    font-size: 24px;
+    color: #4caf50;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.card-subtitle {
+    font-size: 14px;
+    color: #888;
+    line-height: 1.6;
+}
