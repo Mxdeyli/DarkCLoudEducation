@@ -53,7 +53,7 @@
 .announcement-bar {
     position: fixed;
     left: 20px;
-    top: 200px;
+    top: 160px;
     width: 320px;
     background: rgba(26, 31, 46, 0.95);
     border: 1px solid rgba(76, 175, 80, 0.3);

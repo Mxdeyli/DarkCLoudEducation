@@ -13,9 +13,9 @@
             const announcementBar = document.getElementById('announcementBar');
             if (announcementBar) {
                 if (window.scrollY > 100) {
-                    announcementBar.style.top = '20px';
+                    announcementBar.style.top = '140px';
                 } else {
-                    announcementBar.style.top = '100px';
+                    announcementBar.style.top = '160px';
                 }
             }
         });
