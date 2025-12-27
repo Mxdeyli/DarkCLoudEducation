@@ -26,7 +26,7 @@
                     <a href="Main.aspx" class="nav-item">课程</a>
                     <a href="#" class="nav-item">工具</a>
                     <a href="#" class="nav-item">社区</a>
-                    <a href="#" class="nav-item">讨论</a>
+                    <a href="Chatroom.aspx" class="nav-item">讨论</a>
                     <span class="nav-item" onclick="window.close();">退出</span>
                 </div>
             </div>

@@ -70,6 +70,7 @@
     <Content Include="Category.aspx" />
     <Content Include="Chatroom.aspx" />
     <Content Include="Detail.aspx" />
+    <Content Include="Global.asax" />
     <Content Include="Guest.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Main.aspx" />
@@ -96,6 +97,9 @@
     </Compile>
     <Compile Include="Detail.aspx.designer.cs">
       <DependentUpon>Detail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Guest.aspx.cs">
       <DependentUpon>Guest.aspx</DependentUpon>
