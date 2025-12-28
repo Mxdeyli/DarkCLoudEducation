@@ -38,5 +38,12 @@ namespace DAL
             return SqlHelper.ExecuteNonQuery(sql, pm);
 
         }
+
+        public int InsertUser(string username,string pwd)
+        {
+            string sql="insert into UserLogin(UserName,Pwd) values(@username,@pwd)";
+            SqlParameter[] para = new SqlParameter[] {new SqlParameter("@username",username),new SqlParameter("@pwd",pwd)};
+            return SqlHelper.ExecuteNonQuery(sql,para);
+        }
     }
 }

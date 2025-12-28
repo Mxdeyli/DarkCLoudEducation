@@ -1,6 +1,5 @@
 (window.onload = function() {
         function showCategory(category) {
-            /*if (!knowledgeData[category]) return;*/
             window.location.href = "Category.aspx?category="+encodeURIComponent(category);
         }
 
@@ -19,6 +18,7 @@
                 }
             }
         });
+
         window.showCategory = showCategory;
         window.toggleAnnouncement = toggleAnnouncement;
 })();

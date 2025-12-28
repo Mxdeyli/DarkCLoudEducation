@@ -57,5 +57,11 @@ namespace DarkCLoudEducation
             TextBox1.Text = "";
             Response.Redirect(Request.RawUrl);
         }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Main.aspx");
+            Session["UserName"] = null;
+        }
     }
 }

@@ -7,6 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>首页</title>
     <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/nav.css" />
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/footer.css" />
     <script type="text/javascript"src="js/PageData.js"></script>
@@ -27,7 +28,7 @@
                     <a href="#" class="nav-item">工具</a>
                     <a href="#" class="nav-item">社区</a>
                     <a href="Chatroom.aspx" class="nav-item">讨论</a>
-                    <span class="nav-item" onclick="window.close();">退出</span>
+                    <form id="exit" runat="server"><asp:Button ID="Button1" runat="server" Text="注销" CssClass="exitBtn" OnClick="Button1_Click" /></form>
                 </div>
             </div>
         </nav>

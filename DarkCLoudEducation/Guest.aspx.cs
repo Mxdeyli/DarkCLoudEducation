@@ -16,12 +16,24 @@ namespace DarkCLoudEducation
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Login.aspx");
+            if (Session["username"]==null)
+            {
+                Response.Redirect("Login.aspx");
+            }
+            else
+            {
+                Response.Redirect("Main.aspx");
+            }
         }
 
         protected void Button2_Click(object sender, EventArgs e)
         {
             Response.Redirect("Main.aspx");
+        }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            Session["UserName"] = null;
         }
     }
 }

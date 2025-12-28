@@ -25,13 +25,14 @@
         <form id="loginForm" runat="server">
             <div class="input-group">
                 <label>用户名</label>
-                <input type="text" id="username" name="username" placeholder="请输入用户名" required="" />
+                <input type="text" id="username" name="username" placeholder="请输入用户名" />
             </div>
             <div class="input-group">
                 <label>密码</label>
-                <input type="password" id="password" name="password" placeholder="请输入密码" required="" />
+                <input type="password" id="password" name="password" placeholder="请输入密码" />
             </div>
             <asp:Button ID="Button1" runat="server" Text="登 录" CssClass="login-btn" OnClick="Button1_Click" />
+            <asp:Button ID="Button2" runat="server" Text="注 册" CssClass="register-btn" OnClick="Button2_Click" />
         </form>
     </div>
 </div>

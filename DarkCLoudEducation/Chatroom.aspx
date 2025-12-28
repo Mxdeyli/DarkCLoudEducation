@@ -7,6 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>在线聊天室</title>
     <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/nav.css" />
     <link rel="stylesheet" href="css/chatroom.css" />
     <link rel="stylesheet" href="css/footer.css" />
     <script type="text/javascript" src="js/chatroom.js"></script>
@@ -22,12 +23,12 @@
                     <span class="nav-title">暗云安全</span>
                 </div>
                 <div class="nav-menu">
-                    <a href="#" class="nav-item">首页</a>
-                    <a href="#" class="nav-item">课程</a>
+                    <a href="Guest.aspx" class="nav-item">首页</a>
+                    <a href="Main.aspx" class="nav-item">课程</a>
                     <a href="#" class="nav-item">工具</a>
                     <a href="#" class="nav-item">社区</a>
                     <a href="#" class="nav-item">讨论</a>
-                    <span class="nav-item">退出</span>
+                    <asp:Button ID="Button2" runat="server" Text="注销" CssClass="exitBtn" OnClick="Button2_Click" />
                 </div>
             </div>
         </nav>
