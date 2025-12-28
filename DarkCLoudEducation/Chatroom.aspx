@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/common.css" />
     <link rel="stylesheet" href="css/chatroom.css" />
     <link rel="stylesheet" href="css/footer.css" />
+    <script type="text/javascript" src="js/chatroom.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -37,15 +38,16 @@
                 <h2>当前在线人数: <span class="count"><asp:Label ID="Label1" runat="server" Text="Label"></asp:Label></span></h2>
                 </div>
             </div>
-            <div class="chat-window">
+            <div class="chat-window" id="chat-window">
                 <div class="message received">你好，欢迎来到聊天室！</div>
                 <div class="message sent">谢谢！很高兴认识大家。</div>
                 <div class="message received">大家有什么新消息吗？</div>
                 <div class="message sent">没有什么，就是闲聊。</div>
             </div>
             <div class="chat-input">
-                <input type="text" placeholder="输入消息...">
-                <button>发送</button>
+                <asp:Label ID="Label2" runat="server" style="margin-top:10px" Text="Label"></asp:Label>
+                <asp:TextBox ID="TextBox1" runat="server" CssClass="textbox"></asp:TextBox>
+                <asp:Button ID="Button1" runat="server" type="submit" Text="发送" style="padding: 10px 20px;background: #4caf50;border: none;border-radius: 20px;color: #ffffff;font-size: 1rem;cursor: pointer;transition: background 0.3s, transform 0.1s;box-shadow: 0 2px 5px rgba(0,0,0,0.2);" OnClick="Button1_Click" />
             </div>
         </div>
         <div>

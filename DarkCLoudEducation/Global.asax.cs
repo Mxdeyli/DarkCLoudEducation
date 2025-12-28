@@ -12,12 +12,15 @@ namespace DarkCLoudEducation
 
         protected void Application_Start(object sender, EventArgs e)
         {
-
+            Application["Online"] = 0;
+            Application["chat"] = "";
         }
 
         protected void Session_Start(object sender, EventArgs e)
         {
-
+            Application.Lock();
+            Application["Online"] = (int)Application["Online"] + 1;
+            Application.UnLock();
         }
 
         protected void Application_BeginRequest(object sender, EventArgs e)

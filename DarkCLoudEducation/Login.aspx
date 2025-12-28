@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="css/loginstyle.css" />
 </head>
 <body>
+    <div id="goback">
+        <a href="Guest.aspx"><img src="images/back.png" alt="back" /></a>
+    </div>
     <div class="login-container" id="loginPage">
     <div class="login-box">
         <div class="logo-container">

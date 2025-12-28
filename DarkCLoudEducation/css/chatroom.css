@@ -124,17 +124,38 @@
     animation: fadeIn 0.3s ease-out;
 }
 
+.user-name-right {
+    padding: 5px 10px;
+    border-radius: 10px;
+    align-self: flex-end;
+    text-align: right;
+    background: #a7629b;
+    color: #ffffff;
+    font-size: 12px;
+}
+
+.user-name-left {
+    padding: 5px 10px;
+    border-radius: 10px;
+    align-self: flex-start;
+    text-align: left;
+    background: #e7f09a;
+    color: #ffffff;
+    font-size: 12px;
+}
+
 .message.received {
+    align-self: flex-start;
     background: #2e2e2e;
     color: #e0e0e0;
-    align-self: flex-start;
     border-bottom-left-radius: 0;
+
 }
 
 .message.sent {
+    align-self: flex-end;
     background: #4caf50;
     color: #ffffff;
-    align-self: flex-end;
     border-bottom-right-radius: 0;
 }
 
@@ -146,6 +167,22 @@
     box-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
 
+.message-text-right {
+    text-align: right;
+}
+
+.message-text-left {
+    text-align: left;
+}
+
+.message-time-right {
+    font-size: 10px;
+    color: #bbb;
+    position: absolute;
+    bottom: -15px;
+    right: 10px;
+}
+
 .chat-input {
     display: flex;
     padding: 10px;
@@ -153,7 +190,7 @@
     background: #1a1f26;
 }
 
-.chat-input input {
+.chat-input .textbox {
     flex: 1;
     padding: 10px 15px;
     font-size: 1rem;
@@ -166,15 +203,15 @@
     transition: box-shadow 0.3s;
 }
 
-.chat-input input::placeholder {
+.chat-input .textbox::placeholder {
     color: #888;
 }
 
-.chat-input input:focus {
+.chat-input .textbox:focus {
     box-shadow: 0 0 5px rgba(76,175,80,0.5);
 }
 
-.chat-input button {
+.btn-sent {
     padding: 10px 20px;
     background: #4caf50;
     border: none;
@@ -186,11 +223,11 @@
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
-.chat-input button:hover {
+.btn-sent:hover {
     background: #388e3c;
 }
 
-.chat-input button:active {
+.btn-sent:active {
     transform: scale(0.95);
 }
 

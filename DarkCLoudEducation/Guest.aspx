@@ -49,7 +49,7 @@
                 <asp:Button ID="Button2" runat="server" class="btn-load" Text="直接进入学习之旅" OnClick="Button2_Click" />
             </div>
             <div class="btn-hide" id="btn-down">
-                <a href="#"><img src="images/downicon.png" alt="icon"></a>
+                <a href="#"><img src="images/downicon.png" alt="icon" /></a>
             </div>
         </div>
         <div>
