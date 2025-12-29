@@ -28,17 +28,6 @@ namespace DAL
             return user;
         }
 
-        public int UpdatePwd(string username, string newpwd)
-        {
-            string sql = "update UserLogin set Pwd=@pwd where Username=@username";
-            SqlParameter[] pm = new SqlParameter[] {
-                new SqlParameter("@pwd",newpwd),
-                new SqlParameter("@username",username),
-            };
-            return SqlHelper.ExecuteNonQuery(sql, pm);
-
-        }
-
         public int InsertUser(string username,string pwd)
         {
             string sql="insert into UserLogin(UserName,Pwd) values(@username,@pwd)";

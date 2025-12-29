@@ -15,10 +15,6 @@ namespace BLL
         {
             return dal.SelectUserLogin(username);
         }
-        public bool UpdatePwd(string username, string newpwd)
-        {
-            return dal.UpdatePwd(username, newpwd) > 0;
-        }
         public bool InsertUser(string user,string pwd)
         {
             return dal.InsertUser(user,pwd)>0;
