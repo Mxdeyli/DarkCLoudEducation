@@ -10,12 +10,12 @@ namespace DAL
 {
     public class SqlHelper
     {
-        private static SqlConnection sqlconn;
-        private static string connectionString = "Server=.;DataBase=DarkCloud;Integrated Security=true";
         public static SqlConnection GetConnection()
         {
-            SqlConnection sqlconn = new SqlConnection(connectionString);
-            return sqlconn;
+            string connectionString = Environment.GetEnvironmentVariable("DARKCLOUDEDUCATION_CONNECTION_STRING");
+            if (string.IsNullOrWhiteSpace(connectionString))
+                throw new InvalidOperationException("请先配置 DARKCLOUDEDUCATION_CONNECTION_STRING。");
+            return new SqlConnection(connectionString);
         }
 
         public static int ExecuteNonQuery(string sql, params SqlParameter[] parameters)

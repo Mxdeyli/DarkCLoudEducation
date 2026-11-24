@@ -1,0 +1,8 @@
+IF OBJECT_ID(N'dbo.UserLogin', N'U') IS NULL
+BEGIN
+    CREATE TABLE dbo.UserLogin (
+        ID INT IDENTITY(1, 1) PRIMARY KEY,
+        UserName NVARCHAR(100) NOT NULL UNIQUE,
+        Pwd NVARCHAR(255) NOT NULL
+    );
+END;

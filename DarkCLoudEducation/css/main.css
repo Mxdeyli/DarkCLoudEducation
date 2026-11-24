@@ -1,4 +1,4 @@
-.announcement-bar {
+﻿.announcement-bar {
     position: fixed;
     left: 20px;
     top: 160px;
@@ -186,7 +186,7 @@
     line-height: 1.6;
 }
 
-#card-show{
+.knowledge-card.card-show {
     animation-name: cardmove;
     animation-duration: 0.5s;
 }

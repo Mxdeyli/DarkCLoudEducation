@@ -13,14 +13,20 @@ namespace DarkCLoudEducation
         protected void Application_Start(object sender, EventArgs e)
         {
             Application["Online"] = 0;
-            Application["chat"] = "";
+            Application["chat"] = new Queue<Chatroom.ChatMessage>();
         }
 
         protected void Session_Start(object sender, EventArgs e)
         {
             Application.Lock();
-            Application["Online"] = (int)Application["Online"] + 1;
-            Application.UnLock();
+            try
+            {
+                Application["Online"] = (int)Application["Online"] + 1;
+            }
+            finally
+            {
+                Application.UnLock();
+            }
         }
 
         protected void Application_BeginRequest(object sender, EventArgs e)
@@ -40,7 +46,15 @@ namespace DarkCLoudEducation
 
         protected void Session_End(object sender, EventArgs e)
         {
-
+            Application.Lock();
+            try
+            {
+                Application["Online"] = Math.Max(0, (int)Application["Online"] - 1);
+            }
+            finally
+            {
+                Application.UnLock();
+            }
         }
 
         protected void Application_End(object sender, EventArgs e)
