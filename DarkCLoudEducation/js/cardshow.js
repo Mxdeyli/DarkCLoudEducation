@@ -1,25 +1,16 @@
-(window.onload = function() {
-    var count=0;
-    var current=0;
-    var card = document.getElementsByClassName("knowledge-card");
-    function showCard() {
-        if(count<card.length)
-        {
-            card[count].id = "card-show";
-            count++;
+document.addEventListener("DOMContentLoaded", () => {
+    if (!("IntersectionObserver" in window) || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        return;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+        for (const entry of entries) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("card-show");
+                observer.unobserve(entry.target);
+            }
         }
-    }
-    function updateButtonVisibility() {
-        var scrollPosition = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop;
-        if (scrollPosition === 0) {
-        } else {
-            window.setInterval(showCard, 100);
-        }
-    }
-    updateButtonVisibility();
-    function slowlyload()
-    {
-        window.addEventListener('scroll', updateButtonVisibility);
-    }
-    window.setInterval(slowlyload, 100);
-})();
+    });
+
+    document.querySelectorAll(".knowledge-card").forEach((card) => observer.observe(card));
+});

@@ -1,57 +1,32 @@
-window.onload = function() {
-    var card = document.getElementById("chat-window");
-    function Messagebox(AllMessages, UserName) {
-        console.log(allMessagesFromServer);
-        console.log(userNameFromServer);
-        if (!AllMessages || AllMessages.length === 0) return;
-
-        for (let i = 0; i < AllMessages.length; i++) {
-            if (!AllMessages[i]) continue;
-
-            const parts = AllMessages[i].split("|");
-            if (parts.length < 2) continue;
-
-            if (!AllMessages[i] || AllMessages[i].trim() === "") continue;
-
-            const messageUser = parts[0];
-            const messageText = parts[1];
-            const messageTime = parts[2] || "";
-
-            const messageDiv = document.createElement("div");
-            messageDiv.className = "message "+ (messageUser === UserName ? "sent" : "received");
-
-
-            const userDiv=document.createElement("div");
-            let textDiv;
-            let timeDiv;
-            if(messageUser === UserName)
-            {
-                textDiv = document.createElement("div");
-                textDiv.className = "message-text-right";
-                textDiv.innerText = messageText;
-                userDiv.className = "user-name-right";
-                userDiv.innerText = messageUser;
-                timeDiv = document.createElement("div");
-                timeDiv.className = "message-time-right";
-                timeDiv.innerText = " " + messageTime;
-            }
-            else
-            {
-                userDiv.className = "user-name-left";
-                userDiv.innerText = messageUser;
-                textDiv = document.createElement("div");
-                textDiv.className = "message-text-left";
-                textDiv.innerText = messageText;
-                timeDiv = document.createElement("div");
-                timeDiv.className = "message-time-left";
-                timeDiv.innerText = " " + messageTime;
-            }
-            messageDiv.appendChild(textDiv);
-            messageDiv.appendChild(timeDiv);
-            card.appendChild(userDiv);
-            card.appendChild(messageDiv);
-        }
+window.addEventListener("load", () => {
+    const chat = document.getElementById("chat-window");
+    const data = window.chatData;
+    if (!data || data.messages.length === 0) {
+        return;
     }
 
-    Messagebox(window.allMessagesFromServer || [], window.userNameFromServer || "");
-}
+    const messages = document.createDocumentFragment();
+    for (const entry of data.messages) {
+        const sent = entry.User === data.userName;
+        const side = sent ? "right" : "left";
+        const name = document.createElement("div");
+        name.className = "user-name-" + side;
+        name.textContent = entry.User;
+
+        const message = document.createElement("div");
+        message.className = sent ? "message sent" : "message received";
+
+        const text = document.createElement("div");
+        text.className = "message-text-" + side;
+        text.textContent = entry.Text;
+
+        const time = document.createElement("div");
+        time.className = "message-time-" + side;
+        time.textContent = entry.Time;
+
+        message.append(text, time);
+        messages.append(name, message);
+    }
+    chat.replaceChildren(messages);
+    chat.scrollTop = chat.scrollHeight;
+});
